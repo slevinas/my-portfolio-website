@@ -10,14 +10,6 @@ export default async function Navigation() {
       <ul className="flex gap-16 items-center">
         <li>
           <Link
-            href="/cabins"
-            className="hover:text-accent-400 transition-colors"
-          >
-            Cabins
-          </Link>
-        </li>
-        <li>
-          <Link
             href="/about"
             className="hover:text-accent-400 transition-colors"
           >
@@ -25,31 +17,20 @@ export default async function Navigation() {
           </Link>
         </li>
         <li>
-          {sessionFromNextAuth?.user?.image ? (
-            <Link
-              href="/account"
-              className="hover:text-accent-400 transition-colors flex items-center gap-4"
-            >
-              <div className="relative h-10 w-10">
-                <Image
-                  src={sessionFromNextAuth.user.image}
-                  fill
-                  alt="Profile picture"
-                  className="h-10 w-10 rounded-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              <span> Guest area</span>
-            </Link>
-          ) : (
-            <Link
-              href="/login"
-              className="hover:text-accent-400 transition-colors"
-            >
-              Login
-            </Link>
-          )}
+          <Link
+            href="/contact"
+            className="hover:text-accent-400 transition-colors"
+          >
+            Contact
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/projects"
+            className="hover:text-accent-400 transition-colors"
+          >
+            Projects
+          </Link>
         </li>
       </ul>
     </nav>

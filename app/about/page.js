@@ -23,34 +23,21 @@ export default async function Page() {
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
         <h1 className="text-4xl mb-10 text-accent-400 font-medium">
-          Welcome to The Wild Oasis
+          About Me (Zigi )
         </h1>
 
         <div className="space-y-8">
           <p>
-            Where nature&apos;s beauty and comfortable living blend seamlessly.
-            Hidden away in the heart of the Italian Dolomites, this is your
-            paradise away from home. But it&apos;s not just about the luxury
-            cabins. It&apos;s about the experience of reconnecting with nature
-            and enjoying simple pleasures with family.
-          </p>
-          <p>
-            Our {cabins.length} luxury cabins provide a cozy base, but the real
-            freedom and peace you&apos;ll find in the surrounding mountains.
-            Wander through lush forests, breathe in the fresh air, and watch the
-            stars twinkle above from the warmth of a campfire or your hot tub.
-          </p>
-          <p>
-            This is where memorable moments are made, surrounded by
-            nature&apos;s splendor. It&apos;s a place to slow down, relax, and
-            feel the joy of being together in a beautiful setting.
+            I am a Full-Stack Web Developer with a passion for building scalable
+            applications using Next.js, Supabase, PostgreSQL, and modern
+            frontend technologies.
           </p>
         </div>
       </div>
 
       <div className="relative aspect-square col-span-2">
         <Image
-          src="/about-1.jpg"
+          src="/zigi_s_wild_oasisi_website_screenshot.png"
           fill
           // placeholder="blur"
           alt="Family sitting around a fire pit in front of cabin"

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website",
+    "description": "A personal portfolio built with Next.js and TailwindCSS",
+    "image": "/zigi_s_wild_oasisi_website_screenshot.png"
+  },
+  {
+    "id": 2,
+    "title": "Cabin Booking App",
+    "description": "A full-stack cabin booking application using Next.js and Supabase",
+    "image": "/zigi_s_wild_oasis_spa.png"
+  }
+]
