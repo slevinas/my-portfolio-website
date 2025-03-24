@@ -9,6 +9,11 @@ export default async function Navigation() {
     <nav className="z-10 text-xl w-full">
       <ul className="flex justify-center gap-8 items-center">
         <li>
+          <Link href="/" className="hover:text-accent-400 transition-colors">
+            Home
+          </Link>
+        </li>
+        <li>
           <Link href="/about/me" className="flex items-center gap-4 z-10">
             <Image
               src="/avatar.png"

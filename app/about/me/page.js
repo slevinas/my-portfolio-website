@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 export const metadata = {
-  title: "Contact",
+  title: "About Me",
 };
 
 export default async function Page() {

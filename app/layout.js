@@ -14,8 +14,8 @@ const josefin = Josefin_Sans({
 export const metadata = {
   // title: "The Wild Oasis",
   title: {
-    default: "The Wild Oasis / Welcome",
-    template: "%s | The Wild Oasis",
+    default: "Zigi-s Website/ Welcome",
+    template: "%s | Zigis Website",
   },
   description:
     "Luxurious cabins in the heart of nature surrounded by wilderness",

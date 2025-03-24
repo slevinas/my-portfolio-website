@@ -16,13 +16,13 @@ export default function Page() {
 
       <div className="relative z-10 text-center">
         <h1 className="text-8xl text-primary-50 mb-10 tracking-tight font-normal">
-          Welcome to paradise.
+          Welcome to Zigi's Website.
         </h1>
         <Link
-          href="/cabins"
+          href="/projects"
           className="bg-accent-500 px-8 py-6 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
         >
-          Explore luxury cabins
+          Explore My Projects
         </Link>
       </div>
     </main>

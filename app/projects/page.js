@@ -1,49 +1,44 @@
-import CabinList from "@/app/_components/CabinList";
-import Filter from "@/app/_components/Filter";
-import { Suspense } from "react";
-import ProjectsList from "../_components/projects/ProjectsList";
-import SpinnerMini from "../_components/SpinnerMini";
-export const metadata = {
-  title: "Cabins",
-};
+// app/projects/page.tsx
+import Image from "next/image";
+import Link from "next/link";
+import projects from "../_data/projects";
 
-// Opting out of static generation
-// this is for individual pages and not per fetch
-// export const revalidate =  0;
-// export const revalidate =  15;
-// export const revalidate =  3600;
-
-export default async function Page({ searchParams }) {
-  const queryParams = await searchParams;
-
-  const filter = queryParams?.capacity ?? "all";
-
-  console.log("filter", filter);
-  // // FETCH
-  // // CHANGE
-  // const cabins = await getCabins();
-  // console.log("from cabins", cabins);
-
+export default function ProjectsPage() {
   return (
-    <div>
-      <h1 className="text-4xl mb-5 text-accent-400 font-medium">
-        My Latest Projects
-      </h1>
-      {/* <p className="text-primary-200 text-lg mb-10">
-        Cozy yet luxurious cabins, located right in the heart of the Italian
-        Dolomites. Imagine waking up to beautiful mountain views, spending your
-        days exploring the dark forests around, or just relaxing in your private
-        hot tub under the stars. Enjoy nature&apos;s beauty in your own little
-        home away from home. The perfect spot for a peaceful, calm vacation.
-        Welcome to paradise.
-      </p>
-      <div className="flex justify-end mb-8">
-        <Filter />
-      </div> */}
+    <main className="max-w-5xl mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-12 text-center">My Projects</h1>
 
-      <Suspense fallback={<SpinnerMini />} key={filter}>
-        <ProjectsList  />
-      </Suspense>
-    </div>
+      <div className="grid gap-8 md:grid-cols-2">
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="border rounded-lg overflow-hidden shadow hover:shadow-lg transition"
+          >
+            {project.image && (
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={800}
+                height={400}
+                className="w-full h-48 object-cover"
+              />
+            )}
+            <div className="p-6">
+              <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+              <p className="text-gray-600 mb-4">{project.description}</p>
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="inline-block bg-accent-500 text-primary-800 px-4 py-2 rounded hover:bg-accent-600 transition"
+                >
+                  View Project
+                </Link>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
