@@ -130,9 +130,9 @@ export default function AboutPage() {
 
       {/* Contact CTA */}
       <div className="mt-10 text-center">
-        <h2 className="text-3xl text-accent-400 font-medium">Let's Connect</h2>
+        <h2 className="text-3xl text-accent-400 font-medium">Let&#39s Connect</h2>
         <p className="text-gray-300 mt-4">
-          Interested in working together? Let’s have a chat.
+          Interested in working together? Let&#39s have a chat.
         </p>
         <Link href="/contact">
           <button className="mt-4 px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition">
