@@ -14,7 +14,7 @@ export default async function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/about/me" className="flex items-center gap-4 z-10">
+          <Link href="/about" className="flex items-center gap-4 z-10">
             <Image
               src="/avatar.png"
               quality={100}

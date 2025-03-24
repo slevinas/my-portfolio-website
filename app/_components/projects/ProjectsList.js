@@ -1,5 +1,5 @@
 import projects from '../../../zigi_supportives/projects.json';
-import ProjectCard from './ProjectCard';
+import ProjectCard from "../ProjectCard";
 
 function ProjectsList() {
   // const projects = await getProjects();
