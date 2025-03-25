@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function AboutPage() {
   const [showResume, setShowResume] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   function trackResumeDownload() {
     if (typeof window !== "undefined" && window.gtag) {
@@ -28,6 +29,12 @@ export default function AboutPage() {
         ease: "easeOut",
       },
     }),
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("slevinas@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -166,11 +173,19 @@ export default function AboutPage() {
         <p className="text-gray-800 dark:text-gray-300 mt-4">
           Interested in working together? Let&apos;s have a chat.
         </p>
-        <Link href="/contact">
-          <button className="mt-4 px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition">
-            Contact Me
+        <div className="flex justify-center mt-4 gap-4">
+          <button
+            onClick={handleCopyEmail}
+            className="px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition"
+          >
+            {copied ? "Email Copied!" : "Copy Email Address"}
           </button>
-        </Link>
+          <Link href="/contact">
+            <button className="px-6 py-3 bg-gray-300 dark:bg-gray-600 text-gray-900 dark:text-white font-semibold rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 transition">
+              Contact Me
+            </button>
+          </Link>
+        </div>
       </motion.div>
     </motion.section>
   );
