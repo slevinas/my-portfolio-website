@@ -14,15 +14,20 @@ export default async function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/about" className="flex items-center gap-4 z-10">
-            <Image
-              src="/avatar.png"
-              quality={100}
-              height="60"
-              width="60"
-              alt="The Wild Oasis logo"
-            />
-            <span className="text-xl font-semibold text-primary-100">
+          <Link
+            href="/about"
+            className="flex items-center gap-3 sm:gap-4 z-10 hover:opacity-90 transition-all"
+          >
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden ring-2 ring-yellow-400">
+              <Image
+                src="/avatar.png"
+                alt="Zigi's avatar"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            <span className="text-base sm:text-lg font-semibold text-primary-100">
               My Info
             </span>
           </Link>

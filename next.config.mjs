@@ -4,6 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+      {
+        protocol: "https",
         hostname: "wzpaewklwhqbdrhtrvik.supabase.co",
         port: "",
         pathname: "/storage/v1/object/public/cabin-images/**",
@@ -16,7 +23,11 @@ const nextConfig = {
         pathname: "**",
       },
     ],
-    domains: ["wzpaewklwhqbdrhtrvik.supabase.co", "lh3.googleusercontent.com"],
+    domains: [
+      "wzpaewklwhqbdrhtrvik.supabase.co",
+      "lh3.googleusercontent.com",
+      "images.unsplash.com",
+    ],
   },
 };
 
