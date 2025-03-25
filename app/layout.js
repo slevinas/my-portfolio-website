@@ -26,14 +26,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${josefin.className} bg-primary-800 text-primary-100 min-h-screen flex flex-col relative`}
+        className={`${josefin.className}bg-primary-50 text-primary-900 dark:bg-zinc-900 dark:text-white min-h-screen flex flex-col relative`}
       >
-        <Header />
-        <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">
-            <DarkModeProvider>{children}</DarkModeProvider>
-          </main>
-        </div>
+        <DarkModeProvider>
+          <Header />
+          <div className="flex-1 px-8 py-12 grid">
+            <main className="max-w-7xl mx-auto w-full">{children}</main>
+          </div>
+        </DarkModeProvider>
       </body>
     </html>
   );

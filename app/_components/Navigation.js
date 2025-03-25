@@ -9,7 +9,10 @@ export default async function Navigation() {
     <nav className="z-10 text-xl w-full">
       <ul className="flex justify-center gap-8 items-center">
         <li>
-          <Link href="/" className="hover:text-accent-400 transition-colors">
+          <Link
+            href="/"
+            className="hover:text-accent-400 dark:hover:text-yellow-400 transition-colors"
+          >
             Home
           </Link>
         </li>
@@ -23,11 +26,11 @@ export default async function Navigation() {
                 src="/avatar.png"
                 alt="Zigi's avatar"
                 fill
-                className="object-cover"
+                className="object-cover "
                 priority
               />
             </div>
-            <span className="text-base sm:text-lg font-semibold text-primary-100">
+            <span className="text-base sm:text-lg font-semibold text-primary-100 dark:text-white">
               My Info
             </span>
           </Link>
@@ -36,7 +39,7 @@ export default async function Navigation() {
         <li>
           <Link
             href="/contact"
-            className="hover:text-accent-400 transition-colors"
+            className="hover:text-accent-400 dark:hover:text-yellow-400 transition-colors"
           >
             Contact
           </Link>
@@ -44,7 +47,7 @@ export default async function Navigation() {
         <li>
           <Link
             href="/projects"
-            className="hover:text-accent-400 transition-colors"
+            className="hover:text-accent-400 dark:hover:text-yellow-400 transition-colors"
           >
             Projects
           </Link>

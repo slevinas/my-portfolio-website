@@ -1,5 +1,6 @@
+"use client";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
-import { useDarkMode } from "../context/DarkModeContext";
+import { useDarkMode } from "../_context/DarkModeContext";
 
 function DarkModeToggle() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();

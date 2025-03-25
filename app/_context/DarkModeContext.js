@@ -2,28 +2,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useLocalStorageState } from "../_hooks/useLocalStorageState";
 
 const DarkModeContext = createContext();
 
 function DarkModeProvider({ children }) {
+  const [hasMounted, setHasMounted] = useState(false);
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
     typeof window !== "undefined" &&
       window.matchMedia("(prefers-color-scheme: dark)").matches,
     "isDarkMode"
   );
 
+  useEffect(() => {
+    setHasMounted(true);
+  }, [hasMounted]);
+
   useEffect(
     function () {
       if (typeof window !== "undefined") {
         try {
           if (isDarkMode) {
-            document.documentElement.classList.add("dark-mode");
-            document.documentElement.classList.remove("light-mode");
+            document.documentElement.classList.add("dark");
+            document.documentElement.classList.remove("light");
           } else {
-            document.documentElement.classList.add("light-mode");
-            document.documentElement.classList.remove("dark-mode");
+            document.documentElement.classList.add("light");
+            document.documentElement.classList.remove("dark");
           }
         } catch (error) {
           console.error("Error updating dark mode state:", error);
@@ -36,6 +41,8 @@ function DarkModeProvider({ children }) {
   function toggleDarkMode() {
     setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
   }
+
+  if (!hasMounted) return null;
 
   return (
     <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
