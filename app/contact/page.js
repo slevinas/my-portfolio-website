@@ -1,16 +1,14 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 
-
-
-
-export const metadata = {
-  title: "Contact",
-};
-
-export default async function Page() {
-
-
-
+export default function Page() {
+  const [copied, setCopied] = useState(false);
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("slevinas@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
@@ -28,12 +26,14 @@ export default async function Page() {
         </div>
 
         <div>
-          <Link
-            href="/"
-            className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
-          >
-            You can reach me at the following email:
-          </Link>
+          <div className="flex justify-center mt-4 gap-4">
+            <button
+              onClick={handleCopyEmail}
+              className="px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition"
+            >
+              {copied ? "Email Copied!" : "Copy Email"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

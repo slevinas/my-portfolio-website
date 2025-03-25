@@ -31,12 +31,6 @@ export default function AboutPage() {
     }),
   };
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("slevinas@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <motion.section
       className="max-w-5xl mx-auto p-8 text-gray-900 dark:text-gray-100"
@@ -163,29 +157,6 @@ export default function AboutPage() {
             ></iframe>
           </motion.div>
         )}
-      </motion.div>
-
-      {/* Contact CTA */}
-      <motion.div className="mt-10 text-center" variants={fadeUp} custom={5}>
-        <h2 className="text-3xl text-accent-400 font-medium">
-          Let&apos;s Connect
-        </h2>
-        <p className="text-gray-800 dark:text-gray-300 mt-4">
-          Interested in working together? Let&apos;s have a chat.
-        </p>
-        <div className="flex justify-center mt-4 gap-4">
-          <button
-            onClick={handleCopyEmail}
-            className="px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition"
-          >
-            {copied ? "Email Copied!" : "Copy Email Address"}
-          </button>
-          <Link href="/contact">
-            <button className="px-6 py-3 bg-gray-300 dark:bg-gray-600 text-gray-900 dark:text-white font-semibold rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 transition">
-              Contact Me
-            </button>
-          </Link>
-        </div>
       </motion.div>
     </motion.section>
   );
