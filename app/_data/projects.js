@@ -6,7 +6,7 @@ const projects = [
     title: "Portfolio Website",
     description: "A personal portfolio built with Next.js and TailwindCSS",
     image: "/zigi_s_wild_oasis_website_screenshot.png",
-    link: "https://your-portfolio.vercel.app",
+    link: "https://my-portfolio-website-lac-theta.vercel.app/",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const projects = [
     title: "Python Poetry Cookiecutter ETL",
     description: "A cookiecutter template for Python ETL projects using Poetry",
     image: "/python_poetry_cookiecutter_template.png",
-    link: "https://github.com/yourusername/python-poetry-cookiecutter-etl",
+    link: "https://github.com/slevinas/my-portfolio-website",
   },
 ];
 
