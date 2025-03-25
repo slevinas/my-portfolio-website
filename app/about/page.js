@@ -32,7 +32,7 @@ export default function AboutPage() {
 
   return (
     <motion.section
-      className="max-w-5xl mx-auto p-8"
+      className="max-w-5xl mx-auto p-8 text-gray-900 dark:text-gray-100"
       initial="hidden"
       animate="visible"
       variants={fadeUp}
@@ -52,10 +52,10 @@ export default function AboutPage() {
         />
         <div>
           <h1 className="text-4xl font-semibold text-accent-400">Zigi</h1>
-          <h2 className="text-lg text-gray-400">
+          <h2 className="text-lg text-gray-800 dark:text-gray-300">
             Mechanical Engineer - Full-Stack Developer
           </h2>
-          <p className="text-gray-300 mt-2">
+          <p className="text-gray-800 dark:text-gray-300 mt-2">
             Passionate about building fast, scalable apps with{" "}
             <strong>Next.js, Supabase, and PostgreSQL</strong>. I focus on clean
             code, good architecture, and smooth user experiences.
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <h2 className="text-3xl text-accent-400 font-medium">
           Background & Skills
         </h2>
-        <ul className="text-gray-300 mt-4 space-y-2 list-disc list-inside">
+        <ul className="text-gray-800 dark:text-gray-300 mt-4 space-y-2 list-disc list-inside">
           <li>
             I pivoted from mechanical engineering to web development with a
             focus on:
@@ -124,7 +124,7 @@ export default function AboutPage() {
         <h2 className="text-3xl text-accent-400 font-medium">
           Download My Resume
         </h2>
-        <p className="text-gray-300 mt-2">
+        <p className="text-gray-800 dark:text-gray-300 mt-2">
           Click below to get a copy of my latest resume.
         </p>
         <a
@@ -137,7 +137,7 @@ export default function AboutPage() {
         </a>
         <button
           onClick={() => setShowResume((prev) => !prev)}
-          className="mt-4 px-6 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition"
+          className="mt-4 px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-800 transition"
         >
           {showResume ? "Hide Resume Preview" : "Show Resume Preview"}
         </button>
@@ -160,11 +160,9 @@ export default function AboutPage() {
 
       {/* Contact CTA */}
       <motion.div className="mt-10 text-center" variants={fadeUp} custom={5}>
-        <h2 className="text-3xl text-accent-400 font-medium">
-          Let&#39ss Connect
-        </h2>
-        <p className="text-gray-300 mt-4">
-          Interested in working together? Let&#39s have a chat.
+        <h2 className="text-3xl text-accent-400 font-medium">Let's Connect</h2>
+        <p className="text-gray-800 dark:text-gray-300 mt-4">
+          Interested in working together? Let's have a chat.
         </p>
         <Link href="/contact">
           <button className="mt-4 px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition">
