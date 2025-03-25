@@ -17,41 +17,32 @@ export default function AboutPage() {
   }
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12 text-primary-900 dark:text-white">
-      {/* Profile Section */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+    <section className="max-w-5xl mx-auto p-8 text-gray-800 dark:text-gray-100">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row items-center gap-6">
         <Image
           src="/avatar.png"
-          alt="Profile Picture"
+          alt="Zigi profile picture"
           width={120}
           height={120}
           className="rounded-full border-4 border-accent-400 shadow-md"
         />
         <div>
-          <h1 className="text-4xl font-semibold text-accent-500 dark:text-accent-400">
-            Zigi
-          </h1>
-          <h2 className="text-lg text-gray-600 dark:text-gray-400">
-            Mechanical Engineer, Full-Stack Web Developer
+          <h1 className="text-4xl font-bold text-accent-400">Zigi</h1>
+          <h2 className="text-lg text-gray-500 dark:text-gray-400">
+            Mechanical Engineer • Full-Stack Developer
           </h2>
-          <p className="mt-2 text-gray-700 dark:text-gray-300">
-            Passionate about building scalable applications with{" "}
-            <strong>Next.js, Supabase, PostgreSQL</strong>, and modern frontend
-            technologies.
+          <p className="mt-2">
+            Passionate about building fast, scalable apps with{" "}
+            <strong>Next.js</strong>,<strong> Supabase</strong>, and{" "}
+            <strong>PostgreSQL</strong>. I focus on clean code, good
+            architecture, and smooth user experiences.
           </p>
-
-          {/* Social Links */}
           <div className="flex gap-4 mt-4">
-            <Link
-              href="https://github.com/slevinas"
-              aria-label="GitHub Profile"
-            >
+            <Link href="https://github.com/slevinas">
               <Image src="/github.svg" alt="GitHub" width={24} height={24} />
             </Link>
-            <Link
-              href="https://linkedin.com/in/sagilevinas"
-              aria-label="LinkedIn Profile"
-            >
+            <Link href="https://linkedin.com/in/sagilevinas">
               <Image
                 src="/linkedin.svg"
                 alt="LinkedIn"
@@ -63,28 +54,26 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Background & Skills */}
-      <section className="mt-12">
-        <h2 className="text-3xl font-medium text-accent-500 dark:text-accent-400">
-          My Background and Skills
+      {/* Skills Summary */}
+      <div className="mt-10">
+        <h2 className="text-2xl font-semibold text-accent-400">
+          Background & Skills
         </h2>
-        <p className="mt-4 text-gray-700 dark:text-gray-300">
-          I am a Full-Stack Web Developer with a deep interest in modern
-          technologies, specializing in{" "}
-          <strong>
-            Next.js, React, TailwindCSS, Supabase, PostgreSQL, and Firebase
-          </strong>
-          . I focus on building scalable and efficient web applications that
-          deliver great user experiences.
+        <p className="mt-4">
+          I pivoted from mechanical engineering to web development with a focus
+          on:
         </p>
-      </section>
+        <ul className="list-disc pl-6 mt-2 space-y-1">
+          <li>Modern full-stack apps with React, Next.js & Tailwind CSS</li>
+          <li>Backends powered by Supabase & PostgreSQL</li>
+          <li>ETL tooling & Python scripting for QA & automation</li>
+        </ul>
+      </div>
 
       {/* Tech Stack */}
-      <section className="mt-12">
-        <h2 className="text-3xl font-medium text-accent-500 dark:text-accent-400">
-          Tech Stack
-        </h2>
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-4 items-center">
+      <div className="mt-10">
+        <h2 className="text-2xl font-semibold text-accent-400">Tech Stack</h2>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-4">
           <Image src="/nextjs.svg" alt="Next.js" width={40} height={40} />
           <Image src="/react.svg" alt="React" width={40} height={40} />
           <Image src="/tailwind.svg" alt="TailwindCSS" width={40} height={40} />
@@ -98,60 +87,57 @@ export default function AboutPage() {
           <Image src="/amazon-aws-24.png" alt="AWS" width={40} height={40} />
           <Image src="/snowflake2.svg" alt="Snowflake" width={80} height={80} />
         </div>
-      </section>
+      </div>
 
       {/* Resume Section */}
-      <section className="mt-16 text-center">
-        <h2 className="text-3xl font-medium text-accent-500 dark:text-accent-400">
+      <div className="mt-12 text-center">
+        <h2 className="text-2xl font-semibold text-accent-400">
           Download My Resume
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 mt-2">
+        <p className="mt-2 text-gray-500 dark:text-gray-400">
           Click below to get a copy of my latest resume.
         </p>
+        <a
+          href="/resume.pdf"
+          download="Zigi_Resume.pdf"
+          onClick={trackResumeDownload}
+          className="inline-block mt-4 px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition"
+        >
+          Download Resume
+        </a>
 
-        <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/resume.pdf"
-            download="Zigi_Resume.pdf"
-            onClick={trackResumeDownload}
-            className="px-6 py-3 bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold rounded-lg transition"
-          >
-            Download Resume
-          </a>
-
-          <button
-            onClick={() => setShowResume((prev) => !prev)}
-            className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition"
-          >
-            {showResume ? "Hide Resume Preview" : "Show Resume Preview"}
-          </button>
-        </div>
+        <button
+          onClick={() => setShowResume((prev) => !prev)}
+          className="block mx-auto mt-4 px-6 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition"
+        >
+          {showResume ? "Hide Resume Preview" : "Show Resume Preview"}
+        </button>
 
         {showResume && (
-          <div className="mt-8">
+          <div className="mt-6">
             <iframe
               src="/resume.pdf"
-              className="w-full h-[600px] rounded-lg border border-gray-200 dark:border-gray-700"
+              className="w-full h-[600px] border rounded-lg"
               title="Resume Viewer"
             ></iframe>
           </div>
         )}
-      </section>
+      </div>
 
       {/* Contact CTA */}
-      <section className="mt-16 text-center">
-        <h2 className="text-3xl font-medium text-accent-500 dark:text-accent-400">
+      <div className="mt-12 text-center">
+        <h2 className="text-2xl font-semibold text-accent-400">
           Let&apos;s Connect
         </h2>
-        <p className="mt-4 text-gray-700 dark:text-gray-300">
-          Interested in working together? Let&apos;s have a chat.
+        <p className="mt-2 text-gray-500 dark:text-gray-400">
+          Interested in working together? Let’s have a chat.
         </p>
         <Link href="/contact">
-          <button className="mt-4 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold rounded-lg transition">
+          <button className="mt-4 px-6 py-3 bg-accent-500 text-primary-800 font-semibold rounded-lg hover:bg-accent-600 transition">
             Contact Me
           </button>
         </Link>
-      </section>
+      </div>
     </section>
   );
 }
