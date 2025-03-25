@@ -4,6 +4,7 @@ import "@/app/_styles/globals.css";
 
 import { Josefin_Sans } from "next/font/google";
 // import { ReservationProvider } from "./_components/ReservationContext";
+import { ThemeProvider } from "next-themes";
 import { DarkModeProvider } from "./_context/DarkModeContext";
 
 const josefin = Josefin_Sans({
